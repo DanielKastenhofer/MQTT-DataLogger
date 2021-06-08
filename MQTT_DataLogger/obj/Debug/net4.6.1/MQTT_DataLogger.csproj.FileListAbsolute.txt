@@ -1,0 +1,10 @@
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\bin\Debug\net4.6.1\MQTT_DataLogger.exe
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\bin\Debug\net4.6.1\MQTT_DataLogger.pdb
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\bin\Debug\net4.6.1\M2Mqtt.Net.dll
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\obj\Debug\net4.6.1\MQTT_DataLogger.csprojAssemblyReference.cache
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\obj\Debug\net4.6.1\MQTT_DataLogger.AssemblyInfoInputs.cache
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\obj\Debug\net4.6.1\MQTT_DataLogger.AssemblyInfo.cs
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\obj\Debug\net4.6.1\MQTT_DataLogger.csproj.CoreCompileInputs.cache
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\obj\Debug\net4.6.1\MQTT_DataLogger.csproj.CopyComplete
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\obj\Debug\net4.6.1\MQTT_DataLogger.exe
+D:\HTL-Leonding\4. Klasse\NVSN\MQTT_Projekt\MQTT_DataLogger\MQTT_DataLogger\obj\Debug\net4.6.1\MQTT_DataLogger.pdb
