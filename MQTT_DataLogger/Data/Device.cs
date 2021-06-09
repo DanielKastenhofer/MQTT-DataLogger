@@ -12,6 +12,6 @@ namespace MQTT_DataLogger.Data
 
         public Temperature Temp { get; set; }
 
-        public Usage Usage { get; set; }
+        public Measurement Usage { get; set; }
     }
 }
