@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xNNyq1rW890xy3pFD7B/QbmGTENgniCfWPG+RPCHp8N2oLZr9LQKryr/0dAdnC1W5FQcrjdqVine1N/lFZbbvQ==",
+  "dgSpecHash": "j/v6jrasR4+qCys1zyPou1LmmIlcGZQPS5nJSe+IghX4EItsE81YYGOtdMZz26CWRp+RC/kp7w8k7kNMJHucpw==",
   "success": true,
-  "projectFilePath": "D:\\HTL-Leonding\\4. Klasse\\NVSN\\MQTT_Projekt\\MQTT_DataLogger\\MQTT_DataLogger\\MQTT_DataLogger.csproj",
+  "projectFilePath": "E:\\HTLLeonding\\4.Klasse\\NVSN\\MQTT-DataLogger\\MQTT_DataLogger\\MQTT_DataLogger.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Acer\\.nuget\\packages\\m2mqtt\\4.3.0\\m2mqtt.4.3.0.nupkg.sha512"
+    "C:\\Users\\Daniel\\.nuget\\packages\\m2mqtt\\4.3.0\\m2mqtt.4.3.0.nupkg.sha512"
   ],
   "logs": []
 }
