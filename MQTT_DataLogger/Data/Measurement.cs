@@ -6,15 +6,23 @@ using System.Threading.Tasks;
 
 namespace MQTT_DataLogger.Data
 {
-    class Measurement
+    public class Measurement
     {
         public int ID { get; set; }
 
-        public double Value { get; set; }
+        public String DeviceName { get; set; }
+
+        public double CPUUsage { get; set; }
+
+        public double CPUTemp { get; set; }
+
+        public double GPUUsage { get; set; }
+
+        public double GPUTemp { get; set; }
+
+        public double RAMUsage { get; set; }
 
         public DateTime TimeStamp { get; set; }
-
-        public Device Device { get; set; }
 
     }
 }
