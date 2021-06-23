@@ -25,7 +25,7 @@ namespace MQTT_DataLogger.Controller
         [HttpPost("Data")]
         public async Task<IActionResult> GetAllMeasurements([FromBody] gackName g)
         {
-            var measurement = _context.Measurements.Where(m => m.DeviceName == g.deviceName);
+            var measurement = _context.Measurements.Where(m => m.DeviceName == g.deviceName).Select(m => new { m.DeviceName, m.CPUTemp, m.CPUUsage, m.GPUTemp, m.GPUUsage, m.RAMUsage });
             return Ok(measurement);
         }
     }

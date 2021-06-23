@@ -12,6 +12,7 @@ namespace MQTT_DataLogger.Data
 
         public String DeviceName { get; set; }
 
+
         public double CPUUsage { get; set; }
 
         public double CPUTemp { get; set; }

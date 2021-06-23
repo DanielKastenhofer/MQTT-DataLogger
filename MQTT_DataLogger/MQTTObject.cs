@@ -99,7 +99,7 @@ namespace MQTT_DataLogger
             {
                 switch (valueType)
                 {
-                    case "usage":
+                    case "load":
                         measurement.CPUUsage = message;
                         break;
                     case "temp":
@@ -114,7 +114,7 @@ namespace MQTT_DataLogger
             {
                 switch (valueType)
                 {
-                    case "usage":
+                    case "load":
                         measurement.GPUUsage = message;
                         break;
                     case "temp":
