@@ -41,51 +41,56 @@ namespace MQTT_DataLogger
 
             mqttClient.MqttMsgPublishReceived += client_recievedMessage;
 
-            Console.WriteLine("Topic: device/CPU");
-            mqttClient.Subscribe(new string[] { "device/test/cpu/temp" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });
+            Console.WriteLine("Topic: device/#");
+            mqttClient.Subscribe(new string[] { "device/#" }, new byte[] { MqttMsgBase.QOS_LEVEL_AT_LEAST_ONCE });
 
         }
 
+       
         private async void client_recievedMessage(object sender, MqttMsgPublishEventArgs e)
         {
-            Console.WriteLine("Niger != nice");
-
-
-            string valueType = null;
-
-            string deviceName = e.Topic.Split('/')[1];
-            string component = e.Topic.Split('/')[2];
-
-            if (e.Topic.Split('/').Length > 3)
+            await Task.Factory.StartNew(async () =>
             {
-                valueType = e.Topic.Split('/')[3];
-            }
+                Console.WriteLine("Niger != nice");
 
-            var message = Convert.ToDouble(Encoding.Default.GetString(e.Message), System.Globalization.CultureInfo.InvariantCulture);
 
-            Console.WriteLine("Message: " + message);
+                string valueType = null;
 
-            var measurement = await _context.Measurements.FirstOrDefaultAsync(m => m.DeviceName == deviceName);
+                string deviceName = e.Topic.Split('/')[1];
+                string component = e.Topic.Split('/')[2];
 
-            if (measurement == null)
-            {
-                measurement = new()
+                if (e.Topic.Split('/').Length > 3)
                 {
-                    DeviceName = deviceName,
-                    TimeStamp = DateTime.Now
-                };
+                    valueType = e.Topic.Split('/')[3];
+                }
 
-                measurement = await setValuesAsync(measurement, component, valueType, message);
-                await _context.AddAsync(measurement);
-                await _context.SaveChangesAsync();
+                var message = Convert.ToDouble(Encoding.Default.GetString(e.Message), System.Globalization.CultureInfo.InvariantCulture);
 
-            }
+                Console.WriteLine("Message: " + message);
 
-            else
-            {
-                measurement = await setValuesAsync(measurement, component, valueType, message);
-                await _context.SaveChangesAsync();
-            }
+                var measurement = await _context.Measurements.FirstOrDefaultAsync(m => m.DeviceName == deviceName);
+
+                if (measurement == null)
+                {
+                    measurement = new()
+                    {
+                        DeviceName = deviceName,
+                        TimeStamp = DateTime.Now
+                    };
+
+                    measurement = await setValuesAsync(measurement, component, valueType, message);
+                    await _context.AddAsync(measurement);
+                    await _context.SaveChangesAsync();
+
+                }
+
+                else
+                {
+                    measurement = await setValuesAsync(measurement, component, valueType, message);
+                    await _context.SaveChangesAsync();
+                }
+            });
+            
         }
 
         public async Task<Measurement> setValuesAsync(Measurement measurement, string component, string valueType, double message)

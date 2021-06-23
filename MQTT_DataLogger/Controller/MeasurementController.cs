@@ -12,6 +12,8 @@ namespace MQTT_DataLogger.Controller
     [ApiController]
     public class MeasurementController : ControllerBase
     {
+        public record gackName(string deviceName);
+
 
         private readonly MQTTDbContext _context;
 
@@ -20,13 +22,11 @@ namespace MQTT_DataLogger.Controller
             this._context = context;
         }
         
-        [HttpGet("Data")]
-        public async Task<IActionResult> GetAllMeasurements()
+        [HttpPost("Data")]
+        public async Task<IActionResult> GetAllMeasurements([FromBody] gackName g)
         {
-            var measurements = _context.Measurements;
-
-            return Ok(measurements);
+            var measurement = _context.Measurements.Where(m => m.DeviceName == g.deviceName);
+            return Ok(measurement);
         }
-
     }
 }
